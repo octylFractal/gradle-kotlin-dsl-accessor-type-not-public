@@ -9,5 +9,5 @@ plugins {
 }
 
 myPlugin {
-    myThing()
+    check(dependencies.toString() == "extension dependencies") { "dependencies are not extension dependencies, but ${dependencies}" }
 }

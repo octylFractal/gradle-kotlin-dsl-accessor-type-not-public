@@ -1,7 +1,5 @@
 internal open class MyExt {
-    fun myThing() {
-        println("Accessor is working A-OK!")
-    }
+    fun getDependencies(): String = "extension dependencies"
 }
 
 project.extensions.create<MyExt>("myPlugin")
