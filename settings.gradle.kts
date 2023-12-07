@@ -3,4 +3,9 @@ pluginManagement {
 }
 
 rootProject.name = "gradle-kotlin-dsl-accessor-type-not-public"
-include("lib")
+if (System.getProperty("groovy") != null) {
+    include("lib-groovy")
+    project(":lib-groovy").name = "lib"
+} else {
+    include("lib")
+}

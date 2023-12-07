@@ -9,6 +9,8 @@ plugins {
 }
 
 myPlugin {
-    check(dependencies.toString() == "extension dependencies") { "dependencies are not extension dependencies, but ${dependencies}" }
+    if (dependencies.toString() != "extension dependencies") {
+        throw new IllegalStateException("dependencies are not extension dependencies, but ${dependencies}");
+    }
     println("Got extension dependencies!")
 }
